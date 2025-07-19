@@ -1,0 +1,7 @@
+solver,target,Top_K,members,test_accuracy,test_f1
+ga_min,solution_time,3,dt;cb;svm,0.9875,0.9808278867102397
+ga_min,solution_time,5,dt;cb;svm;cnn;mlp,0.9910714285714286,0.9864645132937817
+ga_min,solution_time,7,dt;cb;svm;cnn;mlp;rf;lr,0.9910714285714286,0.9864645132937817
+ga_min,peak_memory,3,rf;cb;svm,1.0,1.0
+ga_min,peak_memory,5,rf;cb;svm;dt;cnn,1.0,1.0
+ga_min,peak_memory,7,rf;cb;svm;dt;cnn;mlp;lr,1.0,1.0

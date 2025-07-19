@@ -1,0 +1,7 @@
+solver,target,Top_K,members,test_accuracy,test_f1
+gurobi_min,solution_time,3,lr;svm;dt,0.8,0.47967641065578076
+gurobi_min,solution_time,5,lr;svm;dt;cnn;rf,0.7732142857142857,0.4613050763030386
+gurobi_min,solution_time,7,lr;svm;dt;cnn;rf;mlp;cb,0.7535714285714286,0.4207279519924263
+gurobi_min,peak_memory,3,rf;svm;cnn,0.24821428571428572,0.22004174243544047
+gurobi_min,peak_memory,5,rf;svm;cnn;mlp;cb,0.25535714285714284,0.21641252434908922
+gurobi_min,peak_memory,7,rf;svm;cnn;mlp;cb;dt;lr,0.32142857142857145,0.29753637577096537

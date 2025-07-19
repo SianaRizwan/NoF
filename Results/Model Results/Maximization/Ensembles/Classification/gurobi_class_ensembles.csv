@@ -1,0 +1,7 @@
+solver,target,Top_K,members,test_accuracy,test_f1
+gurobi2,solution_time,3,rf;cb;mlp,1.0,1.0
+gurobi2,solution_time,5,rf;cb;mlp;lr;dt,1.0,1.0
+gurobi2,solution_time,7,rf;cb;mlp;lr;dt;cnn;svm,1.0,1.0
+gurobi2,peak_memory,3,rf;dt;cb,0.45136186770428016,0.4312059995438423
+gurobi2,peak_memory,5,rf;dt;cb;lr;svm,0.4727626459143969,0.4359629503380461
+gurobi2,peak_memory,7,rf;dt;cb;lr;svm;cnn;mlp,0.4494163424124514,0.39427286529218786

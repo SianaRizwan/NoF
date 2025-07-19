@@ -1,0 +1,10 @@
+solver,target,Top_K,members,test_accuracy,test_f1
+or_min,solution_time,3,rf;cb;cnn,1.0,1.0
+or_min,solution_time,5,rf;cb;cnn;svm;lr,1.0,1.0
+or_min,solution_time,7,rf;cb;cnn;svm;lr;dt;mlp,1.0,1.0
+or_min,optimality_gap,3,dt;rf;cb,1.0,1.0
+or_min,optimality_gap,5,dt;rf;cb;mlp;svm,1.0,1.0
+or_min,optimality_gap,7,dt;rf;cb;mlp;svm;lr;cnn,1.0,1.0
+or_min,peak_memory,3,cb;dt;svm,0.9357142857142857,0.5526521824231748
+or_min,peak_memory,5,cb;dt;svm;mlp;rf,0.9392857142857143,0.5448435202688511
+or_min,peak_memory,7,cb;dt;svm;mlp;rf;cnn;lr,0.9321428571428572,0.4968447484058545

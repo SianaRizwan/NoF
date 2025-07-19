@@ -1,0 +1,10 @@
+solver,target,Top_K,members,test_accuracy,test_f1
+bb2,solution_time,3,cb;svm;lr,0.8629629629629629,0.7867745561581607
+bb2,solution_time,5,cb;svm;lr;rf;cnn,0.8,0.6653756083997794
+bb2,solution_time,7,cb;svm;lr;rf;cnn;dt;mlp,0.7981481481481482,0.6558360361779431
+bb2,optimality_gap,3,dt;cnn;rf,0.8962962962962963,0.2396039603960396
+bb2,optimality_gap,5,dt;cnn;rf;cb;mlp,0.8962962962962963,0.2396039603960396
+bb2,optimality_gap,7,dt;cnn;rf;cb;mlp;svm;lr,0.8962962962962963,0.2396039603960396
+bb2,peak_memory,3,cnn;mlp;lr,0.17592592592592593,0.07723577235772358
+bb2,peak_memory,5,cnn;mlp;lr;dt;cb,0.4444444444444444,0.13152469731061825
+bb2,peak_memory,7,cnn;mlp;lr;dt;cb;rf;svm,0.3962962962962963,0.20610534813712475
