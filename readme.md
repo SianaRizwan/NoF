@@ -36,15 +36,15 @@ NoF/
 │   │   ├── profit_maximization/               # Algorithms/Solvers for maximization
 │   │   └── profit_minimization/               # Algorithms/Solvers for minimization
 │   ├── Feature/
-│   │   ├── extract_features_kp.cpp            # Feature generator (C++)
-│   │   └── optimality_gap.ipynb               # Optimality gap vs Gurobi
+│   │   ├── extract_features_kp.cpp            # Feature generator
+│   │   └── optimality_gap.ipynb               # Optimality gap against Gurobi
 │   ├── Machine Learning Models/
 │   │   ├── Classification/                    # ML models for classification
 │   │   └── Regression/                        # ML models for regression
 │   └── Others/
 │       ├── extract_bins.ipynb                 # Binning instances by performance metric
-│       ├── merge_algo_feature.ipynb           # Merges solver outputs with extracted features
-│       ├── merge_files.ipynb                  # Combines multiple solver runs into a single CSV per algorithm
+│       ├── merge_algo_feature.ipynb           # Merges algorithm outputs with extracted features
+│       ├── merge_files.ipynb                  # Combines multiple algorithm runs into a single CSV per algorithm
 │       └── train_test_val_split.ipynb         # Creates train-test-validation splits for ML model training
 ├── Dataset/                                   # Input problem instances
 │   ├── maximization/
