@@ -42,7 +42,7 @@ NoF/
 │   │   ├── Classification/                    # ML models for classification
 │   │   └── Regression/                        # ML models for regression
 │   └── Others/
-│       ├── extract_bins.ipynb                 # Binning instances by performance metric (e.g., time, gap)
+│       ├── extract_bins.ipynb                 # Binning instances by performance metric
 │       ├── merge_algo_feature.ipynb           # Merges solver outputs with extracted features
 │       ├── merge_files.ipynb                  # Combines multiple solver runs into a single CSV per algorithm
 │       └── train_test_val_split.ipynb         # Creates train-test-validation splits for ML model training
@@ -92,6 +92,8 @@ NoF/
 - For running each of the classification-based scripts, folder paths containing bin files and train-test-val files need to be provided (e.g., path to bin files: Dataset/maximization/training_data/bins and path to train-test-val files: Dataset/maximization/training_data/algorithms)
 - For running regression-based scripts, folder path containing the train-test-val files need to be provided only (e.g., path to train-test-val files: Dataset/maximization/training_data/algorithms)
 - Run the ML scripts to train and generate predictions.
+
+📂 Example folder structure for training data is provided in: Dataset/maximization/training_data/ 
 
 ## 📌 Notes on the 0-1 knapsack Variants
 
