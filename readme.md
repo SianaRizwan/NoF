@@ -88,7 +88,7 @@ NoF/
 - Run train_test_val_split.ipynb (in Codes/Others/). This will generate three files for each algorithm: _train.csv, _test.csv, _val.csv.
 
 ### Step 7: Train ML Models
-- Go to the folder Machine Learning Models.
+- Go to the folder Codes/Machine Learning Models.
 - For running each of the classification-based scripts, folder paths containing bin files and train-test-val files need to be provided (e.g., path to bin files: Dataset/maximization/training_data/bins and path to train-test-val files: Dataset/maximization/training_data/algorithms)
 - For running regression-based scripts, folder path containing the train-test-val files need to be provided only (e.g., path to train-test-val files: Dataset/maximization/training_data/algorithms)
 - Run the ML scripts to train and generate predictions.
