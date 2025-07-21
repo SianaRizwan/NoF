@@ -99,9 +99,9 @@ NoF/
 
 ### Profit-Maximization
 - Dataset path: Dataset/maximization/knapsack_dataset.csv
-- Solver codes: Algorithm/profit_maximization/
+- Algorithm/Solver codes: Codes/Algorithms/profit_maximization/
 
 ### Profit-Minimization
 - Dataset path: Dataset/minimization/knapsack_dataset.csv
-- Solver codes: Algorithm/profit_minimization/
+- Algorithm/Solver codes: Codes/Algorithms/profit_minimization/
 - All other steps remain exactly the same.
