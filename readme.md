@@ -27,32 +27,43 @@ This document explains the complete process to conduct experiments on the 0-1 Kn
 🛠️ All scripts were tested on Linux with Python 3.12+.
 ## 📂 Folder Structure Overview
 ```
-NoF/
+AS4Cloud/
 ├── Analysis/                                  # Analysis scripts and metrics
 │   ├── llm_eval/
 │   └── top_feature_per_metric/
 ├── Codes/                                     # Codebase for the pipeline
-│   ├── Algorithms/
-│   │   ├── profit_maximization/               # Algorithms/Solvers for maximization
-│   │   └── profit_minimization/               # Algorithms/Solvers for minimization
+│   ├── Algorithms/                            
+│   │   ├── knapsack_profit_maximization/      # 0-1 knapsack profit-max variant algorithms
+│   │   ├── knapsack_profit_minimization/      # 0-1 knapsack profit-min variant algorithms
+│   │   └── tsp/                               # TSP algorithms 
 │   ├── Feature/
-│   │   ├── extract_features_kp.cpp            # Feature generator
+│   │   ├── extract_features_kp.cpp            # Knapsack feature generator
+│   │   ├── extract_feature_tsp.cpp            # TSP feature generator
 │   │   └── optimality_gap.ipynb               # Optimality gap against Gurobi
 │   ├── Machine Learning Models/
 │   │   ├── Classification/                    # ML models for classification
 │   │   └── Regression/                        # ML models for regression
-│   └── Others/
-│       ├── extract_bins.ipynb                 # Binning instances by performance metric
-│       ├── merge_algo_feature.ipynb           # Merges algorithm outputs with extracted features
-│       ├── merge_files.ipynb                  # Combines multiple algorithm runs into a single CSV per algorithm
-│       └── train_test_val_split.ipynb         # Creates train-test-validation splits for ML model training
+│   └── Others/                                # Pre- and post-processing notebooks
+│       ├── knapsack/                          # Knapsack-specific notebooks
+│       │   ├── extract_bins.ipynb
+│       │   ├── merge_algo_feature.ipynb
+│       │   ├── merge_files.ipynb
+│       │   └── train_test_val_split.ipynb
+│       └── tsp/                               # TSP-specific notebooks
+│           ├── extract_bins.ipynb
+│           ├── merge_files.ipynb
+│           ├── merge_tsp_ft.ipynb
+│           └── train_test_val_tsp.ipynb
 ├── Dataset/                                   # Input problem instances
-│   ├── maximization/
-│   │   ├── knapsack_dataset.csv
-│   │   └── training_data/                     # Processed data (bins, splits)
-│   └── minimization/
-│       ├── knapsack_dataset.csv
-│       └── training_data/                     # Processed data (bins, splits)
+│   ├── maximization/                          # Dataset for 0-1 knapsack profit-maximization
+│   │   ├── knapsack_dataset.csv               # Raw dataset
+│   │   └── training_data/                     # Features, bins & splits
+│   ├── minimization/                          # Dataset for 0-1 knapsack profit-minimization
+│   │   ├── knapsack_dataset.csv               # Raw dataset
+│   │   └── training_data/                     # Features, bins & splits
+│   └── tsp/                                   # Dataset for TSP
+│       ├── tsp_data/                          # Raw .tsp files
+│       └── training_data/                     # Features, bins & splits
 ├── Results/                                   # Model outputs and results
 │   ├── Maximization/
 │   │   ├── Classification/
@@ -66,7 +77,7 @@ NoF/
 
 ## ✅ Steps to Run the Experiment
 ### Step 1: Solve Knapsack Instances:
-- Go to Codes/Algorithm/profit_maximization/ .
+- Go to Codes/Algorithm/knapsack_profit_maximization/ .
 - Run each algorithm on the dataset file knapsack_dataset.csv located in Dataset/maximization/ folder.
 - Set RAM and CPU manually inside the code.
 - Save outputs in separate folders for each algorithm.
@@ -75,17 +86,17 @@ NoF/
 - Compile and run extract_features_kp.cpp (inside Codes/Feature/) to generate instance-wise features.
 
 ### Step 3: Merge Feature and Algorithm Output
-- Run merge_algo_feature.cpp (inside Codes/Others/) to merge algorithm outputs with features.
-- Run merge_files.ipynb (inside Codes/Others/) to combine results from different runs into one final CSV file for each algorithm.
+- Run merge_algo_feature.cpp (inside Codes/Others/knapsack/) to merge algorithm outputs with features.
+- Run merge_files.ipynb (inside Codes/Others/knapsack/) to combine results from different runs into one final CSV file for each algorithm.
 
 ### Step 4: Calculate Optimality Gap
 - Run optimality_gap.ipynb (in Codes/Feature/) to compute optimality gap against Gurobi for each instance.
 
 ### Step 5: Create Bins for ML Classification
-- Run extract_bins.ipynb (inside Codes/Others/) specifying path to the final merged CSV for each algorithm to generate bins for performance metrics. 
+- Run extract_bins.ipynb (inside Codes/Others/knapsack/) specifying path to the final merged CSV for each algorithm to generate bins for performance metrics. 
 
 ### Step 6: Split Dataset into Train/Test/Val
-- Run train_test_val_split.ipynb (in Codes/Others/). This will generate three files for each algorithm: _train.csv, _test.csv, _val.csv.
+- Run train_test_val_split.ipynb (in Codes/Others/knapsack/). This will generate three files for each algorithm: _train.csv, _test.csv, _val.csv.
 
 ### Step 7: Train ML Models
 - Go to the folder Codes/Machine Learning Models.
@@ -99,9 +110,9 @@ NoF/
 
 ### Profit-Maximization
 - Dataset path: Dataset/maximization/knapsack_dataset.csv
-- Algorithm/Solver codes: Codes/Algorithms/profit_maximization/
+- Algorithm/Solver codes: Codes/Algorithms/knapsack_profit_maximization/
 
 ### Profit-Minimization
 - Dataset path: Dataset/minimization/knapsack_dataset.csv
-- Algorithm/Solver codes: Codes/Algorithms/profit_minimization/
+- Algorithm/Solver codes: Codes/Algorithms/knapsack_profit_minimization/
 - All other steps remain exactly the same.
